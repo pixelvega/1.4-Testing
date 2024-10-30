@@ -3,7 +3,7 @@ package s1t4level1.l1ex1.src;
 import java.util.*;
 
 public class Library {
-    private Set<Book> booksCollection = new TreeSet<Book>();
+    private Set<Book> booksCollection = new TreeSet<>();
 
     public Library() {}
 
@@ -16,16 +16,16 @@ public class Library {
     }
 
     public void addBookByIndex(String title, int index) {
-        List<Book> booksList = new ArrayList<Book>(booksCollection);
+        List<Book> booksList = new ArrayList<>(booksCollection);
 
         if (index < 0 || index > booksList.size()) {
             System.out.println("Index out of range.");
             throw new IndexOutOfBoundsException("Index out of range.");
         }
         booksList.add(index, new Book(title));
-        booksCollection = new TreeSet<Book>(booksList);
+        booksCollection = new TreeSet<>(booksList);
 
-        System.out.println(booksCollection.toString());
+        System.out.println(booksCollection);
     }
 
     public void getBooksCollection() {
@@ -33,7 +33,7 @@ public class Library {
     }
 
     public void getBookByIndex(int index) {
-        List<Book> books = new ArrayList<Book>(booksCollection);
+        List<Book> books = new ArrayList<>(booksCollection);
         Book book = books.get(index);
         System.out.println(book.toString());
     }

@@ -1,11 +1,15 @@
 package s1t4level1.l1ex1.test;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import s1t4level1.l1ex1.src.Library;
+
+import org.junit.jupiter.api.Assertions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import s1t4level1.l1ex1.src.Library;
+
 
 public class LibraryTest {
     private Library library;
@@ -13,13 +17,14 @@ public class LibraryTest {
     @BeforeEach
     public void setUp() {
         library = new Library();
+        Assertions.assertNotNull(library);
+
         library.addBook("Caperucita");
         library.addBook("Aladin");
     }
 
     @Test
     public void addBook() {
-        // Verify that the collection has the expected books
         String[] books = library.toString().split("\n");
         assertEquals(2, books.length);
         assertEquals("Aladin", books[0]);

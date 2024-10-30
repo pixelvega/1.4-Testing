@@ -13,6 +13,7 @@ class DniCalculatorTest {
             "12345678, Z",
             "87654321, X"
     })
+
     void testCalculateDniLetter(int dniNumber, char expectedLetter) {
         assertEquals(expectedLetter, DniCalculator.calculateDniLetter(dniNumber));
     }

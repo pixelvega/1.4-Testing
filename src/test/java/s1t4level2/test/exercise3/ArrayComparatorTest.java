@@ -12,6 +12,6 @@ public class ArrayComparatorTest {
         int[] array1 = ArrayComparator.getArray();
         int[] array2 = new int[]{1, 2, 3, 4};
 
-        assertThat(array1).isEqualTo(array2);
+        assertThat(array1).containsExactly(array2);
     }
 }
